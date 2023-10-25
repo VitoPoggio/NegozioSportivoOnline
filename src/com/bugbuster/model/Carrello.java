@@ -1,68 +1,46 @@
-package com.vituk.ordini.businesscomponent;
-
-import java.util.Enumeration;
-import java.util.Hashtable;
+package com.bugbuster.model;
 
 public class Carrello {
-	private Hashtable<String, String[]> prodotti = new Hashtable<String, String[]>();
-	private int articoli;
-
+	private String username;
+	private long id_articolo;
+	private int qta;
+	
 	public Carrello() {
-		articoli = 0;
+		
 	}
 
-	public int getArticoli() {
-		return articoli;
+	public Carrello(String username, long id_articolo, int qta) {
+		this.username = username;
+		this.id_articolo = id_articolo;
+		this.qta = qta;
 	}
 
-	public void aggiungiArticolo(String id, String marca, String modello, double prezzo) {
-		String[] record = { marca, modello, Double.toString(prezzo), "1", id };
-		articoli++;
-		if (prodotti.containsKey(id)) {
-			String[] dati = prodotti.get(id);
-			int qta = Integer.parseInt(dati[3]);
-			qta++;
-			dati[3] = Integer.toString(qta);
-			prodotti.put(id, dati);
-		} else {
-			prodotti.put(id, record);
-		}
+	public String getUsername() {
+		return username;
 	}
 
-	public void rimuoviArticolo(String id) {
-		if (prodotti.containsKey(id)) {
-			articoli--;
-			String[] dati = prodotti.get(id);
-			if (Integer.parseInt(dati[3]) == 1) {
-				prodotti.remove(id);
-			} else {
-				int qta = Integer.parseInt(dati[3]);
-				qta--;
-				dati[3] = Integer.toString(qta);
-				prodotti.put(id, dati);
-			}
-		}
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
-	public double totaleParziale(String id) {
-		double totale = 0.00;
-		String[] dati = prodotti.get(id);
-		totale += Double.parseDouble(dati[2]) * Integer.parseInt(dati[3]);
-		return totale;
+	public long getId_articolo() {
+		return id_articolo;
 	}
 
-	public double totaleComplessivo() {
-		double totale = 0.00;
-		Enumeration<String[]> elementi = prodotti.elements();
-		String[] dati;
-		while (elementi.hasMoreElements()) {
-			dati = elementi.nextElement();
-			totale += Double.parseDouble(dati[2]) * Integer.parseInt(dati[3]);
-		}
-		return totale;
+	public void setId_articolo(long id_articolo) {
+		this.id_articolo = id_articolo;
 	}
 
-	public Enumeration<String[]> listaProdotti() {
-		return prodotti.elements();
+	public int getQta() {
+		return qta;
 	}
+
+	public void setQta(int qta) {
+		this.qta = qta;
+	}
+
+	public String toString() {
+		return "Carrello [username=" + username + ", id_articolo=" + id_articolo + ", qta=" + qta + "]";
+	}
+
 }
