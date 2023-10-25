@@ -9,7 +9,7 @@ public interface UtenteService {
 	
 	// creare costanti delle query da richiamare nel dao
 		String LISTA_UTENTI = "SELECT * FROM Utente;"; // ASSEGNARE LA QUERY
-		String NUOVO_UTENTE = "INSERT INTO Utente VALUES(?,?,?,?,?,?,?);";
+		String NUOVO_UTENTE = "INSERT INTO Utente VALUES(? , ? ,? , ?,? ,? , ? );";
 		String MODIFICA_UTENTE = "UPDATE Utente SET ? = ? WHERE username = ?;"; 
 		String ELIMINA_UTENTE = "DELETE FROM Utente WHERE username = ?;";
 		

@@ -40,14 +40,16 @@ public class DAO_Utente implements UtenteService {
 	        int righeInserite = pstm.executeUpdate();
 			if (righeInserite > 0) {
 	            System.out.println( "Utente inserito con successo.");
-	        } 
+	        } else {
+	        	System.out.println( "Utente non inserito con successo.");
+	        }
 		
 		
 	}
 		
 	@Override
 	public void modificaUtente(String username, String campo, String valore) throws SQLException {
-			PreparedStatement pstm = conn.prepareStatement(NUOVO_UTENTE);
+			PreparedStatement pstm = conn.prepareStatement(MODIFICA_UTENTE);
 	        pstm.setString(1, campo);
 	        pstm.setString(2, valore);
 	        pstm.setString(3, username);
@@ -65,8 +67,6 @@ public class DAO_Utente implements UtenteService {
 
 	@Override
 	public void eliminaUtente(String username) throws SQLException {
-		try {
-			conn = DBAccess.getConnection();
 			PreparedStatement pstm = conn.prepareStatement(ELIMINA_UTENTE);
 			pstm.setString(1, username);
 	        int righeInserite = pstm.executeUpdate();
@@ -76,13 +76,6 @@ public class DAO_Utente implements UtenteService {
 	        	System.out.println("Errore durante eliminazione dell'utente.");
 	        }
 			DBAccess.closeConnection();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		
 
 		

@@ -192,37 +192,7 @@ public class Menu {
 			
 			} break;
 			case 2: {
-				String nome;
-			    String cognome;
-			    String indirizzo;
-			    int cap;
-			    String username;
-			    String password;
-			    String email;
-			    
-				System.out.println("Inserire nome: ");
-				nome = Menu.scan(); 
-					
-				System.out.println("Inserire cognome: ");
-				cognome = Menu.scan(); 
-					
-				System.out.println("Inserire indirizzo: ");
-				indirizzo = Menu.scan(); 
-					
-				System.out.println("Inserire Cap: ");
-				cap = Integer.parseInt(Menu.scan());
-					
-				System.out.println("Inserire email: ");
-				email = Menu.scan(); 
-					
-				System.out.println("Inserire username: ");
-				username = Menu.scan(); 
-					
-				System.out.println("Inserire password: ");
-				password =  Menu.scan();
-				
-				DTO_Utente u = new DTO_Utente();
-				u.inserisci(new Utente(nome,cognome,indirizzo,cap,email,username,password));
+				Menu.registrazioneUtente();
 				//inserisci Utente
 				
 				} break;
