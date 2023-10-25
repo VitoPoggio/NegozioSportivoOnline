@@ -6,11 +6,27 @@ public class Utente {
 	private String nome;
 	private String cognome;
 	private String indirizzo;
-	private String cap;
+	private int cap;
 //	private Date nascita;
 	private String username;
 	private String password;
 	private String email;
+	
+	
+	
+	public Utente(String nome, String cognome, String indirizzo, int cap, String username, String password,
+			String email) {
+		super();
+		this.nome = nome;
+		this.cognome = cognome;
+		this.indirizzo = indirizzo;
+		this.cap = cap;
+		this.username = username;
+		this.password = password;
+		this.email = email;
+	}
+	
+	
 	public String getNome() {
 		return nome;
 	}
@@ -29,10 +45,10 @@ public class Utente {
 	public void setIndirizzo(String indirizzo) {
 		this.indirizzo = indirizzo;
 	}
-	public String getCap() {
+	public int getCap() {
 		return cap;
 	}
-	public void setCap(String cap) {
+	public void setCap(int cap) {
 		this.cap = cap;
 	}
 	public String getUsername() {

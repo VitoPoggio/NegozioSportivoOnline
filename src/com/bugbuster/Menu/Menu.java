@@ -2,6 +2,9 @@ package com.bugbuster.Menu;
 
 import java.util.Scanner;
 
+import com.bugbuster.dto.DTO_Utente;
+import com.bugbuster.model.Utente;
+
 public class Menu {
 	
 	
@@ -107,7 +110,7 @@ public class Menu {
 		String nome;
 	    String cognome;
 	    String indirizzo;
-	    String cap;
+	    int cap;
 	    String username;
 	    String password;
 	    String email;
@@ -124,7 +127,7 @@ public class Menu {
 		indirizzo = Menu.scan(); 
 			
 		System.out.println("Inserire Cap: ");
-		cap = Menu.scan();
+		cap = Integer.parseInt(Menu.scan());
 			
 		System.out.println("Inserire email: ");
 		email = Menu.scan(); 
@@ -135,7 +138,8 @@ public class Menu {
 		System.out.println("Inserire password: ");
 		password =  Menu.scan();
 		
-		//crea nuovo utente
+		DTO_Utente u = new DTO_Utente();
+		u.inserisci(new Utente(nome,cognome,indirizzo,cap,email,username,password));
 		Menu.menuUtente();
 						
 	}
@@ -187,7 +191,38 @@ public class Menu {
 				//inserisci Prodotto
 			
 			} break;
-			case 2: { 
+			case 2: {
+				String nome;
+			    String cognome;
+			    String indirizzo;
+			    int cap;
+			    String username;
+			    String password;
+			    String email;
+			    
+				System.out.println("Inserire nome: ");
+				nome = Menu.scan(); 
+					
+				System.out.println("Inserire cognome: ");
+				cognome = Menu.scan(); 
+					
+				System.out.println("Inserire indirizzo: ");
+				indirizzo = Menu.scan(); 
+					
+				System.out.println("Inserire Cap: ");
+				cap = Integer.parseInt(Menu.scan());
+					
+				System.out.println("Inserire email: ");
+				email = Menu.scan(); 
+					
+				System.out.println("Inserire username: ");
+				username = Menu.scan(); 
+					
+				System.out.println("Inserire password: ");
+				password =  Menu.scan();
+				
+				DTO_Utente u = new DTO_Utente();
+				u.inserisci(new Utente(nome,cognome,indirizzo,cap,email,username,password));
 				//inserisci Utente
 				
 				} break;
@@ -200,6 +235,12 @@ public class Menu {
 				
 				} break;
 			case 5:{ 
+				DTO_Utente u = new DTO_Utente();
+				u.visualizza();
+				System.out.println("Inserire username dell'utente da eliminare: ");
+				String username = Menu.scan(); 
+				u.elimina(username);
+				
 				//elimina Utente
 				
 			} break;
@@ -212,6 +253,15 @@ public class Menu {
 				
 			} break;
 			case 8:{ 
+				DTO_Utente u = new DTO_Utente();
+				u.visualizza();
+				System.out.println("Inserire username dell'utente da modificare: ");
+				String username = Menu.scan();
+				System.out.println("Inserire campo da modificare: ");
+				String campo = Menu.scan();
+				System.out.println("Inserire nuovo valore: ");
+				String valore= Menu.scan();
+				u.modifica(username,campo,valore);
 				//aggiorna Utente
 				
 			} break;
