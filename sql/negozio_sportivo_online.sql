@@ -30,7 +30,7 @@ CREATE TABLE `negozio_sportivo_online`.`articolo` (
   `prezzo` DOUBLE NOT NULL,
   PRIMARY KEY (`id_articolo`));
   
-CREATE TABLE `negozio_sportivo_online`.`new_table` (
+CREATE TABLE `negozio_sportivo_online`.`ordinearticolo` (
   `id_oa` INT NOT NULL,
   `id_ordine` INT NOT NULL,
   `id_articolo` INT NOT NULL,
