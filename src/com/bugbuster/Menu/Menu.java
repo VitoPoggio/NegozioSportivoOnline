@@ -1,6 +1,5 @@
 package com.bugbuster.Menu;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu {
@@ -70,7 +69,7 @@ public class Menu {
 	
 	
 	//Log ins
-	private static void logInAdmin() throws IOException {
+	private static void logInAdmin()  {
 		
 		String username;
 		String password;
@@ -86,7 +85,7 @@ public class Menu {
 		
 	}
 	
-	private static void logInUtente() throws IOException {
+	private static void logInUtente()  {
 		
 		String username;
 		String password;
@@ -104,7 +103,7 @@ public class Menu {
 	}
 	
 	//Registrazioni
-	private static void registrazioneUtente() throws IOException {
+	private static void registrazioneUtente()  {
 		String nome;
 	    String cognome;
 	    String indirizzo;
