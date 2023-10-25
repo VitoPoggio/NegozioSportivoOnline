@@ -2,6 +2,9 @@ package com.bugbuster.service;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
+
+import com.bugbuster.model.Carrello;
 
 public interface CarrelloService {
 	String SELECT_ALL_CARRELLO_USER = "SELECT * FROM carrello WHERE username = ?";
@@ -21,9 +24,10 @@ public interface CarrelloService {
 	 * recupera carrello (select cose where username) FATTO
 	 */
 	
-	ResultSet getCarrello(String username) throws SQLException;
+	List<Carrello> getCarrello(String username) throws SQLException;
 	ResultSet getArtCart(String username) throws SQLException;
 	void aggiungiArtCart(String username, long id_articolo, int qta) throws SQLException;
+	void aumentaQta(String username, long id_articolo, int qta) throws SQLException;
 	void deleteCarrello(String username) throws SQLException;
 	void deleteArtCart(String username, long id_articolo) throws SQLException;
 	void acquista(String username) throws SQLException;

@@ -1,6 +1,7 @@
 package com.bugbuster.model;
 
 public class Carrello {
+	private long id_car;
 	private String username;
 	private long id_articolo;
 	private int qta;
@@ -41,6 +42,14 @@ public class Carrello {
 
 	public String toString() {
 		return "Carrello [username=" + username + ", id_articolo=" + id_articolo + ", qta=" + qta + "]";
+	}
+
+	public long getId_car() {
+		return id_car;
+	}
+
+	public void setId_car(long id_car) {
+		this.id_car = id_car;
 	}
 
 }

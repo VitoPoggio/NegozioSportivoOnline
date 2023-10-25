@@ -1,6 +1,7 @@
 package com.bugbuster.model;
 
 public class OrdineArticolo {
+	private long id_oa;
 	private long id_ordine;
     private long id_articolo;
     private int qta;
@@ -25,6 +26,12 @@ public class OrdineArticolo {
 	@Override
 	public String toString() {
 		return "OrdineArticolo [id_ordine=" + id_ordine + ", id_articolo=" + id_articolo + ", qta=" + qta + "]";
+	}
+	public long getId_oa() {
+		return id_oa;
+	}
+	public void setId_oa(long id_oa) {
+		this.id_oa = id_oa;
 	}
     
     
