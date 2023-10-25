@@ -6,15 +6,19 @@ import com.bugbuster.model.Ordine;
 public class DTO_Ordine {
 	DAO_Ordine dao = new DAO_Ordine();
 	
+	public void listaOrdini(Ordine ordine) {
+		dao.getListaOrdini(ordine);
+	}
+	
 	public void inserisci(Ordine ordine) {
-		dao.inserisci(ordine);
+		dao.nuovoOrdine(ordine);
 	}
 	
 	public void modifica(Ordine ordine) {
-		dao.inserisci(ordine);
+		dao.modificaOrdine(ordine);
 	}
 	
 	public void elimina(Ordine ordine) {
-		dao.inserisci(ordine);
+		dao.eliminaOrdine(ordine);
 	}
 }
