@@ -55,7 +55,7 @@ public class DAO_Carrello implements CarrelloService{
         } else {
             System.out.println("Errore durante l'inserimento del prodotto.");
         }
-        conn.close();
+        
 		 
 
 	}
